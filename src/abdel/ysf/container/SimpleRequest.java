@@ -45,8 +45,22 @@ public class SimpleRequest {
              }
          }
 
+         if("POST".equals(method)){
+             StringBuilder  requestBody = new StringBuilder();
+             while(in.ready()){
+                 requestBody.append((char) in.read());
+             }
+           //  System.out.println(requestBody.toString());
+             parseRequestParameters( requestBody.toString());
+         }
+
          // TODO : parse POST request body into parameters
          return true;
+    }
+
+    // get the value of a request parameter
+    public  String getRequestParameter(String parameterName){
+        return  requestParameters.get(parameterName);
     }
 
     //queryString : user=abdel&pwd=abdel

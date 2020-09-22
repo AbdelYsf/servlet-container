@@ -29,4 +29,8 @@ public class SimpleHttpServlet {
         System.out.println("abdel.ysf.container.SimpleHttpServlet doPost default impl ...");
 
     }
+
+    public void destroy(){
+        System.out.println("abdel.ysf.container.SimpleHttpServlet Destroy() default impl ...");
+    }
 }

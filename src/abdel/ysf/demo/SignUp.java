@@ -10,7 +10,7 @@ public class SignUp extends SimpleHttpServlet {
 
     @Override
     public void init() {
-        System.out.println("init signup called ....");
+        System.out.println("init() signup called ....");
 
     }
 
@@ -33,7 +33,15 @@ public class SignUp extends SimpleHttpServlet {
     protected void doPost(SimpleRequest request, SimpleResponse response) {
         PrintWriter printWriter = response.getPrintWriter();
         printWriter.println("<html><body>");
-        printWriter.println("<h1>do post</h1>");
+
+        printWriter.println("<h1>your parameters are: </h1>");
+        printWriter.println("firstName: "+request.getRequestParameter("fname"));
+        printWriter.println("<br>lastName: "+request.getRequestParameter("lname"));
         printWriter.println("</body></html>");
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("clean up resources in signup destroy() called .....");
     }
 }

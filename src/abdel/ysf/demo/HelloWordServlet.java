@@ -10,7 +10,7 @@ public class HelloWordServlet extends SimpleHttpServlet {
 
     @Override
     public void init() {
-        System.out.println("init HelloWorldsERVLET called ....");
+        System.out.println("init() HelloWorldservlet called ....");
 
     }
 
@@ -20,5 +20,11 @@ public class HelloWordServlet extends SimpleHttpServlet {
         printWriter.println("<html><body>");
         printWriter.println("<h1>do get in hello world servlet </h1>");
         printWriter.println("</body></html>");
+    }
+
+    @Override
+    public void destroy() {
+
+        System.out.println("clean up resources in hello destroy() called .....");
     }
 }
